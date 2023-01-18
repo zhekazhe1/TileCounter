@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    <form action="/data" method="post" class="h5data">
+        <h3> Размеры плитки</h3>
+        <p>Ширина Плитки <input type="text" name="width_Tile" maxlength="7" size="5"/> cm</p>
+        <p>Высота Плитки <input type="text" name="height_Tile" maxlength="7" size="5"/> cm</p>
+        <h3> Размеры Поверхности</h3>
+        <p>Ширина стены  <input type="text" name="width_wall" maxlength="7" size="5"/> cm</p>
+        <p>Высота стены  <input type="text" name="height_wall" maxlength="7" size="5"/> cm</p>
+        <p>Толщина шва <input type="text" name="seam_thickness" maxlength="7" size="5" placeholder="1.5 mm"/> mm</p>
+        <p><input type="submit" value="Enter" /></p>
+    </form>
+{% endblock %}

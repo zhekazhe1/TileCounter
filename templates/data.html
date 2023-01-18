@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+{% if form_data.items()%}
+<div class="oneFilm">
+    <h3 class="h3data"> Начинаем класть плитку - <span>{{(form_data["start_from"][0])}}</span></h3>
+</div>
+    {% if form_data["start_from"][1] == 1 %}
+        <div> <img src="static/pictures/centersmatch.png"></div>
+    {% else %}
+        <div> <img src="static/pictures/fromcentertosides.png"></div>
+    {% endif %}
+
+<div class="oneFilm"><h3 class="h3data"> Толщина шва меж плитками: <span>{{(form_data["seam_thickness"])}}mm</span></h3></div>
+<div class="oneFilm"><h3 class="h3data"> Центр стены = <span>{{(form_data["center_of_surface"])}} cm </span></h3></div>
+<div class="oneFilm"><h3 class="h3data"> Центр Плитки : <span>{{(form_data["center_of_tile"])}} cm</span></h3> </div>
+<div class="oneFilm"><h3 class="h3data"> Площадь поверхности = <span>{{(form_data["area_surface"])}} m2</span></h3></div>
+<div class="oneFilm"><h3 class="h3data"> Площадь плитки = <span>{{(form_data["title_Area"])}} m2</span></h3></div>
+<div class="oneFilm"><h3 class="h3data"> Количество плитки на всю стену: <span>{{(form_data["tile_numb_area"])}} штук</span></h3></div>
+<div class="oneFilm"><h3 class="h3data"> Второй ряд от пола начинается с высоты: <span>{{(form_data["distance_first_tile"])}} cm</span></h3></div>
+    {% else %}
+        there is NO DATA
+    {% endif %}
+{% endblock %}
